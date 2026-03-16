@@ -24,9 +24,10 @@ src/
 ```
 
 ## Requirements
-README.md
-git@github.com:doublerainbowohmygod/predictive_cloud_alert.gitgit@github.com:doublerainbowohmygod/predictive_cloud_alert.git
 
+```
+git clone https://github.com/doublerainbowohmygod/predictive_cloud_alert.git
+```
 ```bash
 pip install -r requirements.txt
 ```

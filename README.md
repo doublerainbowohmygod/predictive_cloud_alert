@@ -20,18 +20,19 @@ src/
 ├── models_dl.py           # 1D CNN, Attention CNN, Focal Loss (PyTorch)
 └── lead_time.py           # Detection lead time analysis
 01_eda.ipynb               # Exploratory data analysis
-02_experiments.ipynb        # All experiments, comparison, discussion
+02_experiments.ipynb       # All experiments, comparison, discussion
+requirements.txt
+run.sh                     # One-click start (Linux/Mac)
+run.cmd                    # One-click start (Windows)
+README.md
 ```
 
 ## Requirements
 
-```
-git clone https://github.com/doublerainbowohmygod/predictive_cloud_alert.git
-```
+Python 3.11+
 ```bash
 pip install -r requirements.txt
 ```
-
 If running in Jupyter Notebook (not JupyterLab or Colab):
 
 ```bash
@@ -40,17 +41,29 @@ pip install notebook
 
 ## Quick start
 
+Linux/Mac:
+```bash
+./run.sh
+```
+
+Windows:
+```cmd
+run.cmd
+```
+
+Or manually:
 ```bash
 git clone https://github.com/doublerainbowohmygod/predictive_cloud_alert.git
 cd predictive_cloud_alert
+python3 -m venv .venv
+source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-pip install notebook        # if Jupyter is not installed
-jupyter notebook
 jupyter notebook 01_eda.ipynb
 ```
 
-Open `01_eda.ipynb` first — it downloads NAB data automatically.
-Then open `02_experiments.ipynb` for all models and results.
+Script opens `01_eda.ipynb` first -- it downloads data and runs exploration.
+At the bottom of `01_eda.ipynb` there is a link to open `02_experiments.ipynb`
+with all models, comparison table, and discussion.
 
 All functions are in `src/`, notebooks import them.
 Data downloads automatically on first run (NAB CloudWatch from GitHub API, Pryshlyak from HuggingFace, internet required).
